@@ -1,4 +1,4 @@
-package com.omaradev.benchmark
+package com.omaradev.test_benchmark
 
 import androidx.benchmark.macro.StartupMode
 import androidx.benchmark.macro.StartupTimingMetric
@@ -18,7 +18,7 @@ class StartupBenchmark {
 
     @Test
     fun startupCold() = benchmarkRule.measureRepeated(
-        packageName = "com.example.benchmark",
+        packageName = "com.omaradev.benchmark",
         metrics = listOf(StartupTimingMetric()),
         iterations = 5,
         startupMode = StartupMode.COLD
@@ -30,7 +30,7 @@ class StartupBenchmark {
 
     @Test
     fun startupWarm() = benchmarkRule.measureRepeated(
-        packageName = "com.example.benchmark",
+        packageName = "com.omaradev.benchmark",
         metrics = listOf(StartupTimingMetric()),
         iterations = 5,
         startupMode = StartupMode.WARM
@@ -41,7 +41,7 @@ class StartupBenchmark {
 
     @Test
     fun startupHot() = benchmarkRule.measureRepeated(
-        packageName = "com.example.benchmark",
+        packageName = "com.omaradev.benchmark",
         metrics = listOf(StartupTimingMetric()),
         iterations = 5,
         startupMode = StartupMode.HOT

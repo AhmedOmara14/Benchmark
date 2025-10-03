@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.benchmark"
+    namespace = "com.omaradev.test_benchmark"
     compileSdk = 36
 
     defaultConfig {
@@ -15,7 +15,6 @@ android {
     }
 
     buildTypes {
-        // Benchmark buildType = شبه الـ Release لكن موقّع بـ debug key
         create("benchmark") {
             isDebuggable = true
             signingConfig = getByName("debug").signingConfig
@@ -23,36 +22,39 @@ android {
         }
     }
 
-    // ده بيربط benchmark مع الـ app target
     targetProjectPath = ":app"
     experimentalProperties["android.experimental.self-instrumenting"] = true
 }
 
-// --- JVM / Kotlin config ---
 kotlin {
-    jvmToolchain(11) // خلي Toolchain على Java 17
+    jvmToolchain(11)
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
     kotlinOptions {
-        jvmTarget = "11" // لازم String
+        jvmTarget = "11"
     }
 }
 
 tasks.withType<JavaCompile>().configureEach {
-    sourceCompatibility = "11" // خليهم String مش JavaVersion
+    sourceCompatibility = "11"
     targetCompatibility = "11"
 }
 
-// --- Dependencies ---
 dependencies {
     implementation(libs.androidx.junit)
     implementation(libs.androidx.espresso.core)
     implementation(libs.androidx.uiautomator)
     implementation(libs.androidx.benchmark.macro.junit4)
+
+    implementation(libs.ui)
+    implementation(libs.material3)
+
+    implementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.test.manifest)
+
 }
 
-// --- Enable benchmark buildType only ---
 androidComponents {
     beforeVariants(selector().all()) {
         it.enable = it.buildType == "benchmark"

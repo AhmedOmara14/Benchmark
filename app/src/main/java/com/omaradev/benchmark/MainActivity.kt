@@ -64,7 +64,7 @@ fun BadProductList(productsJson: List<String>) {
         items(productsJson.size) { index ->
             val product = Json.decodeFromString<Product>(productsJson[index])
 
-            Row(
+            Column(
                 Modifier
                     .fillMaxWidth()
                     .padding(8.dp)
@@ -73,7 +73,7 @@ fun BadProductList(productsJson: List<String>) {
                     context.resources,
                     R.drawable.img
                 )
-                Image(bitmap.asImageBitmap(), contentDescription = null)
+                //Image(bitmap.asImageBitmap(), contentDescription = null)
                 Spacer(Modifier.width(8.dp))
                 Text(product.name)
             }
