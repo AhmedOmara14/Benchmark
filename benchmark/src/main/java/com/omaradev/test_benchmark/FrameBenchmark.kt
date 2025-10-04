@@ -34,4 +34,26 @@ class FrameBenchmark {
         list.scroll(Direction.DOWN, 5.0f)
 
     }
+
+    @Test
+    fun scrollGoodExample() = benchmarkRule.measureRepeated(
+        packageName = "com.omaradev.benchmark",
+        metrics = listOf(FrameTimingMetric()),
+        iterations = 5
+    ) {
+        pressHome()
+        startActivityAndWait()
+
+        val goodButton = device.findObject(
+            By.text("Good Example")
+        )
+        goodButton.click()
+
+        device.wait(Until.hasObject(By.text("Product #0")),5_000)
+
+        val list = device.findObject(By.scrollable(true))
+        list.scroll(Direction.DOWN,5.0f)
+    }
+
+
 }
