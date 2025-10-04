@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.util.trace
 import coil.compose.AsyncImage
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -47,9 +48,13 @@ class MainActivity : ComponentActivity() {
                     }
 
                     if (showBad) {
-                        BadProductList(jsonList)
+                        trace("BadProductListTrace") {
+                            BadProductList(jsonList)
+                        }
                     } else {
-                        GoodProductList(jsonList)
+                        trace("GoodProductListTrace") {
+                            GoodProductList(jsonList)
+                        }
                     }
                 }
             }
@@ -73,7 +78,7 @@ fun BadProductList(productsJson: List<String>) {
                     context.resources,
                     R.drawable.img
                 )
-                //Image(bitmap.asImageBitmap(), contentDescription = null)
+                Image(bitmap.asImageBitmap(), contentDescription = null)
                 Spacer(Modifier.width(8.dp))
                 Text(product.name)
             }
