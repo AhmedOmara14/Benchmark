@@ -1,4 +1,4 @@
-package com.omaradev.benchmark
+package com.omaradev.benchmark.example_macro
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
@@ -15,6 +15,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.trace
 import coil.compose.AsyncImage
+import com.omaradev.benchmark.R
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 

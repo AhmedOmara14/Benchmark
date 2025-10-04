@@ -1,4 +1,4 @@
-package com.omaradev.benchmark.ui.theme
+package com.omaradev.benchmark.example_macro.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.omaradev.benchmark.ui.theme
+package com.omaradev.benchmark.example_macro.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

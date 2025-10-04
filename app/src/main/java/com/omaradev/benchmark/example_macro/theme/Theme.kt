@@ -1,4 +1,4 @@
-package com.omaradev.benchmark.ui.theme
+package com.omaradev.benchmark.example_macro.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
