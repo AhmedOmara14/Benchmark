@@ -26,3 +26,6 @@ rootProject.name = "My Application"
 include(":app")
 include(":MacroBenchmark")
 include(":Microbenchmark")
+include(":data")
+include(":domain")
+include(":di")
