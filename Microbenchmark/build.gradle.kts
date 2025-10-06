@@ -44,6 +44,7 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.benchmark.junit4)
+    implementation(libs.kotlinx.serialization.json)
 
 
     androidTestImplementation(project(":data"))

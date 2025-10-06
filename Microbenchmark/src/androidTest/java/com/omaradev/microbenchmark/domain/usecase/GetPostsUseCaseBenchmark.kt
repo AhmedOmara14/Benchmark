@@ -1,8 +1,9 @@
-package com.omaradev.microbenchmark.usecase
+package com.omaradev.microbenchmark.domain.usecase
 
 import androidx.benchmark.junit4.BenchmarkRule
 import androidx.benchmark.junit4.measureRepeated
 import com.omaradev.domain.usecase.GetPostsUseCase
+import com.omaradev.microbenchmark.data.repository.fakeRepository
 import kotlinx.coroutines.runBlocking
 import org.junit.Rule
 import org.junit.Test

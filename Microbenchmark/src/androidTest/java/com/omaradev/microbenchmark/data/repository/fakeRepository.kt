@@ -1,4 +1,4 @@
-package com.omaradev.microbenchmark.usecase
+package com.omaradev.microbenchmark.data.repository
 
 import com.omaradev.domain.model.Post
 import com.omaradev.domain.repository.PostRepository
